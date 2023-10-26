@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    /* background: #000; */
+}
+
+.con {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.con > h1 {
+    margin: 1rem;
+    color: #F26221;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* margin: 0 2rem; */
+}
+
+
+
+.date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.date h2{
+    margin: 1rem;
+    color: #F26221;
+}
+
+#datefrom, #dateto {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 50px;
+    padding: 0 1rem;
+    color: #F26221;
+}
+
+/* .finder {
+    margin: 0 2rem;
+    border: 1px solid red;
+} */
+#finder {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 50px;
+    padding: 0 1rem;
+}
+#finder::placeholder {
+    color: #F26221;
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
+    margin: 1rem 2rem;
+}
+.back a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background: #FAC898;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+}
+
+a:hover, a:active {
+    background: #f8ae67;
+    color: black;
+}
+
+.class, .dorm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+table, th, tr, td {
+    /* border: 2px solid grey; */
+    /* border-collapse: collapse; */
+    background: #FFEEDD;
+    padding: 1rem 2rem;
+    /* border-radius: 10px; */
+}
+
+#classTable, #dormTable {
+    font-size: 1.2rem;
+    overflow-x: auto;
+}
+.class > h2, .dorm > h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background: #FAC898;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20rem;
+}

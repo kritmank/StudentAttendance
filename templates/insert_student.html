@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/PNG" href={% static 'loginpage/logo_kosen.PNG' %} />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add student from CSV</h1>
+    <form action="/check/insert_student/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file_stu">Upload Student File</label>
+        <input type="file" id="file_stu" name="document">
+        <button type="submit">OK</button>
+    </form>
+</body>
+</html>

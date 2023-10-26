@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="images/PNG" href={% static 'loginpage/logo_kosen.PNG' %} />
+    <link rel="stylesheet" href="{% static 'css/login6.css' %}" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="con">
+      <div class="login-con">
+        <form method="POST" id="login">
+          {% csrf_token %}
+          <img src="{% static 'loginpage/check.png' %}" alt="Logo" />
+
+          {% if messages %} {% for message in messages %}
+          <div class="alert">{{ message }}</div>
+          {% endfor %} {% endif %}
+
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="USERNAME"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="PASSWORD"
+          />
+          <button class="btn"><strong>LOG IN</strong></button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<ul class="errorlist">
+  <li>password2
+    <ul class="errorlist">
+      <li>The two password fields didn’t match.</li>
+    </ul>
+  </li>
+</ul>

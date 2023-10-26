@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="images/PNG" href={% static 'loginpage/logo_kosen.PNG' %} />
+    <link rel="stylesheet" href="{% static 'css/report5.css' %}">
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+    <title>Attendance Report</title>
+</head>
+<body>
+    <div class="con">
+        <h1>Attendance Report</h1>
+
+        <section class="search">
+            <div class="finder">
+                <input type="text" name="finder" id="finder" placeholder="Search ID">
+            </div>
+            <div class="date">
+                <h2>Date : </h2>
+                <input type="date" name="datefrom" id="datefrom">
+                <h2> - </h2>
+                <input type="date" name="dateto" id="dateto">
+            </div>
+        </section>
+
+        <section class="class">
+            <h2>Class</h2>
+            <table class="table-bordered" id="classTable">
+                <tr>
+                    <th>Name</th>
+                    <th colspan="4">Sasawat Theejanthuek</th>
+                </tr>
+                <tr>
+                  <th>On time</th>
+                  <th>Late</th>
+                  <th>Leave Early</th>
+                  <th>Absent</th>
+                  <th>Official Leave</th>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>0</td>
+                    <td>2</td>
+                </tr>
+              </table>
+        </section>
+
+        <section class="dorm">
+            <h2>Dormitory</h2>
+            <table class="table-bordered" id="dormTable">
+                <tr>
+                    <th>Name</th>
+                    <th colspan="5">Sasawat Theejanthuek</th>
+                </tr>
+                <tr>
+                  <th colspan="2">On time</th>
+                  <th colspan="2">Late</th>
+                  <th colspan="2">Leave Early</th>
+                </tr>
+                <tr>
+                    <td colspan="2">2</td>
+                    <td colspan="2">1</td>
+                    <td colspan="2">3</td>
+                </tr>
+              </table>
+
+        </section>
+
+        <div class="back">
+            <a href="/">Back</a>
+        </div>
+    </div>
+    
+</body>
+</html>

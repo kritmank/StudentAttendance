@@ -1,0 +1,36 @@
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav a:hover, nav a:focus {
+    color: #000;
+}
+
+nav {
+    background: gray;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav a > img {
+    width: 7%;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav li {
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.nav-items {
+    color: #000;
+}

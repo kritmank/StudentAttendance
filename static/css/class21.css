@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    /* background-color: #000; */
+}
+
+body {
+    background-image: linear-gradient(90deg, rgba(0,122,194,0.8) 8%, rgba(242,98,33,0.8) 90%);
+}
+
+.con {
+    margin-top: 5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.con h1 {
+    margin: 1rem;
+    /* color: #F26221; */
+    color: #fff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 1rem; */
+}
+
+
+
+.date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.date h2{
+    margin: 1rem;
+    /* color: #F26221; */
+    color: #fff;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+#date {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 50px;
+    padding: 0 1rem;
+    color: #F26221;
+}
+
+.finder {
+    margin: 0 2rem;
+}
+#finder {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 50px;
+    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+}
+#finder::placeholder {
+    /* color: #F26221; */
+    color: #000;
+}
+#finder:focus {
+    outline: none;
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
+    margin: 1rem 2rem;
+}
+.back a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    /* background: #FAC898; */
+    background: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 10px;
+}
+
+.class {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#classFinder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    background: rgba(255, 255, 255, 0.4);
+    font-size: 1.2rem;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+}
+#classFinder:focus, #classFinder:hover, #classFinder:active {
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    color: black;
+    border: none;
+}
+
+
+.btnEdited {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    color: black !important;
+    background: rgba(255, 255, 255, 0.4) !important;
+    font-size: 1.2rem !important;
+    width: 5rem !important;
+    height: 3rem !important;
+    border-radius: 10px !important;
+    border: none !important;
+    text-align: center !important;
+}
+
+
+.con a:hover, .con a:active {
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    color: black;
+}
+
+.AttendanceTable {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 1rem;
+    /* overflow: auto; */
+}
+table {
+    font-size: 1.2rem;
+}
+table-size {
+    width: 80%;
+}
+
+table, th , thead, tbody, td {
+    border-collapse: collapse;
+    background-color: rgba(255,255,255,0.13);
+    padding: 1rem 2rem;
+    /* overflow: scroll; */
+}
+
+#classSelect {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.step-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+}
+.current-page:hover {
+    cursor: default;
+}
+.step-links a:hover, .step-links a:active {
+    background: transparent;
+    cursor: pointer;
+}
+
+.status-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.status-box p {
+    text-align: center;
+    margin: 0 0 0 0.2rem;
+}
+.status-box h3 {
+    margin: 0 0.2rem;
+}
+
+/* #classSelect button {
+    margin: 0 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: none;
+    background: rgba(0, 255, 150, 0.4);
+    font-size: 1.2rem;
+    text-align: center;
+}
+#classSelect button:hover, #classSelect button:active {
+    background: rgba(0, 255, 150, 0.6);
+    cursor: pointer;
+    color: black;
+    border: none;
+} */
+
+@media screen and (max-width: 850px) {
+    .date {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .search {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+
+    .back a {
+        width: 9rem;
+        height: 3.6rem;
+        font-size: 1.1rem;
+    }
+    .finder {
+        margin: 0.3rem 1rem;
+    }
+    #finder {
+        width: 10rem;
+        height: 2.3rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 375px) {
+  
+    .finder {
+        margin-left: 1rem;
+        
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    .back a {
+        width: 8rem;
+        height: 3.2rem;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .search {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .finder {
+        margin-left: 1rem;
+    }
+
+    table {
+        font-size: 0.65rem;
+    }
+
+    .back a {
+        width: 7rem;
+        height: 2.8rem;
+        font-size: 1.1rem;
+    }
+}

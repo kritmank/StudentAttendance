@@ -1,0 +1,135 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #263238;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF3D00;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  /* background: #263238; */
+  background-color: #e8f5ff;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+body.pop {
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  cursor: none;
+  transition: 0.3s linear;
+}
+section:nth-child(2n+1) {
+  background: rgba(0, 0, 0, 0.1);
+}
+section:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  section {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  section {
+    width: 100%;
+  }
+}
+
+.loader-11 {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #1b263b #1b263b transparent transparent;
+  -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+}
+.loader-11:after, .loader-11:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF3D00 #FF3D00;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  -webkit-animation: rotationBack 0.5s linear infinite;
+          animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader-11:before {
+  width: 64px;
+  height: 64px;
+  border-color: #FFF #FFF transparent transparent;
+  -webkit-animation: rotation 1.5s linear infinite;
+          animation: rotation 1.5s linear infinite;
+}
+
+/* keyFrames */
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

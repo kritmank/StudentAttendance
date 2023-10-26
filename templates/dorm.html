@@ -1,0 +1,114 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/class21.css' %}" />
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"
+/>
+<link rel="stylesheet" href={% static 'css/preloader.css' %}>
+
+{% endblock css%} 
+
+{% block title %}
+<title>Dormitory Roll Call</title>
+{% endblock title %} 
+
+{% block body %}
+<div class="con">
+  <div class="preloader center">
+    <div
+      aria-label="Orange and tan hamster running in a metal wheel"
+      role="img"
+      class="wheel-and-hamster"
+    >
+      <div class="wheel"></div>
+      <div class="hamster">
+        <div class="hamster__body">
+          <div class="hamster__head">
+            <div class="hamster__ear"></div>
+            <div class="hamster__eye"></div>
+            <div class="hamster__nose"></div>
+          </div>
+          <div class="hamster__limb hamster__limb--fr"></div>
+          <div class="hamster__limb hamster__limb--fl"></div>
+          <div class="hamster__limb hamster__limb--br"></div>
+          <div class="hamster__limb hamster__limb--bl"></div>
+          <div class="hamster__tail"></div>
+        </div>
+      </div>
+      <div class="spoke"></div>
+    </div>
+  </div>
+
+  <div class="loaded-content">
+    <h1>Dormitory Roll Call</h1>
+  <section class="search">
+    <div class="date">
+      <h2>Date : {{ Today }} ( {{today_name}} )</h2>
+      <div id="classSelect">
+        <h2>Dorm : </h2>
+
+        <div class="dropdown">
+          <a class="btn btnEdited dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            {{dorm_building}}
+          </a>
+        
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="/dorm/table/7/">7</a></li>
+            <li><a class="dropdown-item" href="/dorm/table/8/">8</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="finder">
+      <input
+        type="text"
+        name="finder"
+        id="finder"
+        placeholder="Search Room"
+        onkeyup="roomSearch()"
+      />
+    </div>
+  </section>
+
+  <section class="AttendanceTable">
+    <table class="table table-borderless" id="myTable">
+      <thead>
+        <th>Room</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Modify</th>
+      </thead>
+      <tbody id="myTbody"></tbody>
+    </table>
+  </section>
+  <section id="modal-con"></section>
+
+  <div class="back">
+    <a href="/">Back</a>
+  </div>
+  </div>
+  
+</div>
+
+<!-- JS -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"
+></script>
+<script src="{% static 'js/dorm2.js' %}"></script>
+<script src="{% static 'js/ajax/dorm5.js' %}"></script>
+<script src="{% static 'js/preloader2.js' %}"></script>
+<script>
+  window.addEventListener("load", buildTable("{{dorm_building}}"));
+</script>
+
+{% endblock body %}

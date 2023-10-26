@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+.con a {
+  text-decoration: none;
+  color: black;
+}
+
+.con {
+  height: 100vh;
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 122, 194, 0.8) 8%,
+    rgba(242, 98, 33, 0.8) 90%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.con h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #0271b1;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.4);
+}
+
+.con h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #f15710;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.4);
+  margin: 1rem;
+}
+
+.con .a-items {
+  width: 35rem;
+  height: 6rem;
+  margin: 1rem;
+  /* background: #FAC898; */
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 29px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.con .a-items:hover,
+.con .a-items:active {
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 560px) {
+  .con h1 {
+    font-size: 65px;
+  }
+
+  .con h2 {
+    font-size: 35px;
+  }
+
+  .con .a-items {
+    width: 16rem;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .con h1 {
+    font-size: 60px;
+  }
+
+  .con h2 {
+    font-size: 30px;
+  }
+
+  .con .a-items {
+    width: 16rem;
+    font-size: 18px;
+  }
+}

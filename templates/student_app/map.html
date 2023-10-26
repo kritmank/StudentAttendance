@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Plot Location</title>
+		<!-- Script -->
+		<script
+			async
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6GFfy8JHymLxSd56SoNk4jf_5dC7zVSM&callback=initMap"
+		></script>
+	</head>
+	<body>
+		<h1>Location Ploting</h1>
+		<div
+			class="container"
+			style="
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				margin: 50px;
+				height: 100vh;
+			"
+		>
+			<div>
+				<p id="lat">Latitude:</p>
+				<p id="long">Longtitude:</p>
+				<button id="share" onclick="findMyCoordinates()">
+					Share my location
+				</button>
+				<div style="display: flex; flex-direction: column; margin-top: 10px">
+					<h2>Plotting Input Location.</h2>
+					<input
+						type="text"
+						name="lat"
+						id="lat-form"
+						placeholder="Latitude"
+						style="margin-block: 5px"
+					/>
+					<input
+						type="text"
+						name="long"
+						id="long-form"
+						placeholder="Longitude"
+						style="margin-block: 5px"
+					/>
+					<button style="width: 80px; margin-block: 10px" onclick="plot()">Plot!</button>
+				</div>
+			</div>
+			<!-- Map Display -->
+			<div
+				id="container-map"
+				style="width: 550px; height: 400px; margin: 0 50px"
+			></div>
+		</div>
+	</body>
+	<script>
+		function plot() {
+			lat_form = document.getElementById("lat-form").value;
+			long_form = document.getElementById("long-form").value;
+			lat_form = parseFloat(lat_form);
+			long_form = parseFloat(long_form);
+			console.log(lat_form, long_form);
+			initMap(lat_form, long_form);
+		}
+
+		const http = new XMLHttpRequest();
+		let result = document.querySelector("#result");
+
+		function findMyCoordinates() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(
+					(position) => {
+						// console.log(position.coords.latitude, position.coords.longitude);
+						document.getElementById("lat").textContent =
+							"Latitude: " + position.coords.latitude;
+						document.getElementById("long").textContent =
+							"Longitude: " + position.coords.longitude;
+						initMap(position.coords.latitude, position.coords.longitude);
+					},
+					(err) => {
+						alert(err.message);
+					}
+				);
+			} else {
+				alert("Geolocation is not supported by this browser.");
+			}
+		}
+
+		// Initialize and add the map
+		let map;
+
+		async function initMap(lat, long) {
+			const position = { lat: lat, lng: long };
+			// Request needed libraries.
+			//@ts-ignore
+			const { Map } = await google.maps.importLibrary("maps");
+			const { AdvancedMarkerElement } = await google.maps.importLibrary(
+				"marker"
+			);
+
+			// The map, centered at Uluru
+			map = new Map(document.getElementById("container-map"), {
+				zoom: 18,
+				center: position,
+				mapId: "DEMO_MAP_ID",
+			});
+
+			const marker = new AdvancedMarkerElement({
+				map: map,
+				position: position,
+				title: "Position",
+			});
+		}
+
+		findMyCoordinates();
+	</script>
+</html>

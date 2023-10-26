@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Register Account</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:400,700"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="{% static 'css/student_app/register5.css' %}" />
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="{% static 'js/student_app/register.js' %}"></script>
+	</head>
+	<body class="align">
+		<div class="grid">
+			<form
+				action="/student/add-info/"
+				method="POST"
+				class="form login"
+				id="form"
+			>
+        {% csrf_token %}
+				<h1>Register Account</h1>
+        {% if messages %} {% for message in messages %}
+				<!--  -->
+				<p>{{ message }}</p>
+				<!--  -->
+				{% endfor %} {% endif %}
+				<div class="form__field">
+					<label for="login__username">
+						<svg class="icon">
+							<use xlink:href="#icon-user"></use>
+						</svg>
+					</label>
+          <input type="text" name="userID" value="{{userID}}" hidden>
+          <input type="text" name="studentID" value="{{studentID}}" hidden>
+					<input
+						autocomplete="username"
+						id="ID"
+						type="text"
+						name="name"
+						class="form__input"
+						placeholder="Full Name"
+						required
+					/>
+				</div>
+				<div class="form__field">
+					<label for="login__username">
+						<svg class="icon">
+							<use xlink:href="#icon-user"></use>
+						</svg>
+					</label>
+          <input type="text" name="userID" value="{{userID}}" hidden>
+					<input
+						autocomplete="username"
+						id="ID"
+						type="text"
+						name="dorm"
+						class="form__input"
+						placeholder="Dorm (Ex. 9-000)"
+						required
+					/>
+				</div>
+
+				<div class="form__field">
+					<label for="login__username">
+						<svg class="icon">
+							<use xlink:href="#icon-user"></use>
+						</svg>
+					</label>
+					<select name="class" id="class" class="form__input">
+						<option value="0" selected>Select Class</option>
+						<option value="3C1">3C1</option>
+						<option value="3C2">3C2</option>
+					</select>
+          <!-- <input type="text" name="userID" value="{{userID}}" hidden>
+					<input
+						autocomplete="username"
+						id="ID"
+						type="text"
+						name="studentID"
+						class="form__input"
+						placeholder="Student ID"
+						required
+					/> -->
+				</div>
+
+				<div class="form__field">
+					<input type="submit" value="Sign Up" />
+				</div>
+			</form>
+		</div>
+
+		<svg xmlns="http://www.w3.org/2000/svg" class="icons">
+			<symbol id="icon-user" viewBox="0 0 1792 1792">
+				<path
+					d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z"
+				/>
+			</symbol>
+		</svg>
+	</body>
+</html>

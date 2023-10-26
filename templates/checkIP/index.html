@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="images/PNG" href={% static 'loginpage/logo_kosen.PNG' %} />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Check IP</h1>
+		<h2>IP Addesss: <span id="ip-data"></span></h2>
+	</body>
+	<script>
+		// Function to get IP address and subnet mask
+		function json(url) {
+			return fetch(url).then((res) => res.json());
+		}
+
+		let apiKey = "0e13ec0a6a503e1178509aecf1ef0875ecbd8fb3e1e253332186c1ae";
+		json(`https://api.ipdata.co?api-key=${apiKey}`).then((data) => {
+			console.log(data.ip);
+			document.getElementById("ip-data").innerHTML = data.ip;
+			// so many more properties
+		});
+	</script>
+</html>

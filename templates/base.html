@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="images/PNG" href={% static 'loginpage/logo_kosen.PNG' %} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- <link rel="stylesheet" href="{% static 'css/base2.css' %}"> -->
+    {% block css %}{% endblock css%}
+    {% block title %}{% endblock title %}
+</head>
+<body>
+    <nav class="navb">
+        <i class="uil uil-bars navbOpenBtn"></i>
+        <a href="/" class="logo">
+            <img src="{% static 'loginpage/check.png' %}" alt="">
+        </a>
+        <ul class="navb-links" style="margin-bottom: 0;">
+          <i style="color: #fff;" class="uil uil-times navbCloseBtn"></i>
+            <li><a href="/">Home</a></li>
+            <li><a href="/class/table/">Attendance Check</a></li>
+            <li><a href="/dorm/table/">Dormitory Roll Call</a></li>
+        </ul>
+        <div>
+            <a style="margin: 0 1rem;" href="/auth/logout">
+                <i style="color: #000; font-size: 20px;" class="uil uil-signout" id="logoutIcon"></i>
+            </a>
+        </div>
+    </nav>
+    {% block body %}
+    {% endblock body %}
+    <script src={% static 'js/nav2.js' %}></script>
+</body>
+</html>

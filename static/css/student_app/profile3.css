@@ -1,0 +1,391 @@
+/* Import Font Dancing Script */
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8f5ff;
+  font-family: Arial;
+  overflow: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+/* Sidenav */
+.profile {
+  margin-bottom: 20px;
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 1px grey;
+}
+.text {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	padding-left: 30px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  /* padding-top: 20px; */
+}
+
+.job {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+/* Main */
+.main {
+  /* margin-top: 2%; */
+  /* margin-left: 29%; */
+  font-size: 28px;
+  padding: 0 10px;
+  width: 58%;
+}
+
+.main h2 {
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.main .cards {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 1px 1px 8px 0 grey;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+}
+
+.main .cards table {
+  border: none;
+  font-size: 16px;
+  height: 180px;
+  width: 60%;
+}
+.cards-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Button */
+.black-btn {
+  font-family: inherit;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #000 0%, #3f3f3f 100%);
+  color: white;
+  padding: 0.8em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.black-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.black-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.black-btn span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+.black-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+.black-btn .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+.black-btn:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.black-btn:hover svg {
+  transform: rotate(45deg);
+}
+
+.check-button {
+  text-align: center;
+}
+
+tr td:nth-child(1) {
+	font-weight: bold;
+}
+
+/* .card-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+} */
+
+.refresh-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1.2rem;
+}
+
+.circle {
+  border: 50% !important;
+}
+
+.editInfoBtn {
+  font-size: 14px;
+  color: #000;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.editInfoBtn:hover {
+  color: #777;
+}
+
+.cards {
+  position: relative;
+}
+.editInfo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1.2rem;
+}
+
+.edit-items tr {
+  margin-bottom: 0.3rem;
+}
+.edit-items tr td {
+  padding-right: 2rem;
+}
+
+
+/* Modal */
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 450px;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: absolute;
+  top: 20%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.modal .flex {
+  margin: 0.4rem 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-end; */
+}
+
+.modal form input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9em;
+  width: 300px;
+}
+
+.modal p {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.m-button {
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+}
+
+.btn-open {
+  position: absolute;
+  bottom: 150px;
+}
+
+.btn-close {
+  transform: translate(10px, -20px);
+  padding: 0.5rem 0.7rem;
+  background: #eee;
+  border-radius: 50%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.modal {
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+	.name {
+		font-size: 16px;
+	}
+	.job {
+		font-size: 12px;
+	}
+	td {
+		font-size: 14px;
+	}
+	.profile img {
+		width: 100px;
+		height: 100px;
+	}
+
+	#checkbtn {
+		/* padding: 0.4em 0.8em; */
+		font-size: 14px;
+    width: 150px;
+    margin-block: 6px;
+    margin-right: 0;
+	}
+	.check-button {
+		font-size: 20px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	.profile {
+		margin-bottom: 20px;
+		margin-top: 10px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.text {
+	padding: 0;
+	align-items: center;
+	margin-top: 1rem;
+	}
+  .main .card {
+    display: flex;
+    justify-content: center;
+  }
+  .social-media {
+    flex-direction: column;
+  }
+
+  .modal {
+    transform: scale(0.75);
+  }
+	/* tr {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	td {
+		padding: 5px 0;
+	} */
+}
+
+@media only screen and (max-width: 768px) {
+	tr {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	td {
+		padding: 5px 0;
+	}
+
+}

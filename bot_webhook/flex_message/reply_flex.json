@@ -1,0 +1,168 @@
+{
+	"type": "bubble",
+	"body": {
+		"type": "box",
+		"layout": "vertical",
+		"contents": [
+			{
+				"type": "box",
+				"layout": "horizontal",
+				"contents": [
+					{
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+							{
+								"type": "image",
+								"url": "https://sprofile.line-scdn.net/0h-Ji7nHmocmVETmc7YMMMGjQecQ9nPyt3PSw1C3dKKlUtLWdhYC85VCZJe1EsKmZnYHw8BHBGLlZIXQUDWhiOUUN-L1R4fzIyayE4hw",
+								"aspectMode": "cover",
+								"size": "full"
+							}
+						],
+						"cornerRadius": "100px",
+						"width": "90px",
+						"height": "90px"
+					},
+					{
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+							{
+								"type": "text",
+								"text": "Mangkorn 🐉",
+								"size": "md",
+								"margin": "md",
+								"weight": "bold"
+							},
+							{
+								"type": "text",
+								"text": "64991032",
+								"margin": "md"
+							}
+						],
+						"alignItems": "flex-start",
+						"justifyContent": "center"
+					}
+				],
+				"spacing": "xl",
+				"paddingAll": "20px",
+				"background": {
+					"type": "linearGradient",
+					"angle": "85deg",
+					"startColor": "#fbc4ab",
+					"endColor": "#a3cef1"
+				}
+			},
+			{
+				"type": "box",
+				"layout": "vertical",
+				"contents": [
+					{
+						"type": "text",
+						"text": "Information",
+						"margin": "none",
+						"size": "lg",
+						"weight": "bold",
+						"align": "start",
+						"wrap": false,
+						"offsetBottom": "md"
+					},
+					{
+						"type": "box",
+						"layout": "baseline",
+						"contents": [
+							{
+								"type": "text",
+								"text": "Name",
+								"color": "#aaaaaa",
+								"size": "sm",
+								"flex": 1
+							},
+							{
+								"type": "text",
+								"text": "Krittitee Jongsaksawat",
+								"size": "sm",
+								"flex": 3
+							}
+						],
+						"margin": "lg",
+						"offsetStart": "sm"
+					},
+					{
+						"type": "box",
+						"layout": "baseline",
+						"contents": [
+							{
+								"type": "text",
+								"text": "Class",
+								"color": "#aaaaaa",
+								"size": "sm",
+								"flex": 1
+							},
+							{
+								"type": "text",
+								"text": "3C2",
+								"size": "sm",
+								"flex": 3
+							}
+						],
+						"margin": "lg",
+						"offsetStart": "sm"
+					},
+					{
+						"type": "box",
+						"layout": "baseline",
+						"contents": [
+							{
+								"type": "text",
+								"text": "Dorm",
+								"color": "#aaaaaa",
+								"size": "sm",
+								"flex": 1
+							},
+							{
+								"type": "text",
+								"text": "7-224",
+								"size": "sm",
+								"flex": 3
+							}
+						],
+						"margin": "lg",
+						"offsetStart": "sm"
+					}
+				],
+				"paddingAll": "20px"
+			},
+			{
+				"type": "box",
+				"layout": "horizontal",
+				"contents": [
+					{
+						"type": "box",
+						"layout": "vertical",
+						"contents": [
+							{
+								"type": "image",
+								"url": "https://4af2-161-246-147-69.ngrok-free.app/student/student-qrcode/64991032.png",
+								"size": "full"
+							}
+						],
+						"width": "180px",
+						"height": "180px",
+						"justifyContent": "center"
+					}
+				],
+				"justifyContent": "center"
+			},
+			{
+				"type": "button",
+				"action": {
+					"type": "uri",
+					"label": "Check Attendance",
+					"uri": "https://liff.line.me/2000606373-GRERPW09"
+				}
+			}
+		],
+		"paddingAll": "0px"
+	}
+}

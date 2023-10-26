@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Profile Page</title>
+
+		<!-- Custom Css -->
+		<link rel="stylesheet" href="{% static 'css/student_app/profile3.css' %}" />
+
+		<!-- FontAwesome 5 -->
+		<script
+			src="https://kit.fontawesome.com/3010efffe8.js"
+			crossorigin="anonymous"
+		></script>
+		
+		<!-- Line LIFF -->
+		<script
+		charset="utf-8"
+		src="https://static.line-scdn.net/liff/edge/2/sdk.js"
+		></script>
+
+		<!-- App Script  -->
+		<script src="{% static 'js/student_app/form.js' %}"></script>
+	</head>
+	<body>
+		<div class="main">
+			<h2>INFORMATION</h2>
+			<div class="cards">
+				<div class="cards-body">
+					<div class="profile">
+						<!-- <img alt="userIMG" width="100" height="100" id="pictureUrl" /> -->
+						<img id="pictureUrl" src="{% static 'media/gray.png' %}" alt="" />
+						<div class="text">
+							<div class="name" id="displayName">None</div>
+							<div class="job">KOSEN-KMITL</div>
+						</div>
+					</div>
+					<div class="table">
+						<table>
+							<tbody>
+								<tr>
+									<td>Name</td>
+									<td>{{student.name}}</td>
+									<!-- <td>Sasawat Theejanthuekkkk</td> -->
+								</tr>
+								<tr>
+									<td>Student ID</td>
+									<td>{{student.studentID}}</td>
+									<!-- <td>64991047</td> -->
+								</tr>
+								<tr>
+									<td>Class</td>
+									<td>{{ student.class_name }}</td>
+									<!-- <td>3C2</td> -->
+								</tr>
+								<tr>
+									<td>Dorm</td>
+									{% if student.dorm_room == "None" %}
+									<td>
+										{{ student.dorm_building }}-xxx
+									</td>
+									{% else %}
+									<td>
+										{{ student.dorm_building }}-{{ student.dorm_room }}
+									</td>
+									{% endif %}
+									
+									<!-- <td>3C2</td> -->
+								</tr>
+							</tbody>
+						</table>
+					</div>
+		
+				</div>
+				<div class="editInfo">
+					<button class="editInfoBtn"><i class="fa-solid fa-pen-to-square fa-xl"></i></button>
+				</div>
+			</div>
+
+			<h2>Checking</h2>
+			<div class="cards">
+				<div class="cards-body">
+					<div class="social-media">
+						{% if queue_status %}
+							{% for queue in queue_list %}
+								<form
+									action="/student/check-queue/{{queue.queueID}}"
+									method="post"
+									id="{{queue.queueID}}"
+								>
+									{% csrf_token %}
+									<input type="text" name="lat" id="lat{{queue.queueID}}" hidden/>
+									<input type="text" name="long" id="long{{queue.queueID}}" hidden/>
+									<input type="text" name="studentID" id="studentID" value={{student.studentID}} hidden/>
+									{% if queue.type_q == "class" %}
+										<button class="black-btn" id="checkbtn" type="button" onclick="check('{{queue.queueID}}')">
+										<div class="svg-wrapper-1">
+											<div class="svg-wrapper">
+												<i class="fa-solid fa-check-to-slot"></i>
+											</div>
+										</div>
+											<p>Class</p>
+										</button>
+									{% endif %}
+									{% if queue.type_q == "dorm" %}
+										<button class="black-btn" id="checkbtn" type="button" onclick="check('{{queue.queueID}}')">
+										<div class="svg-wrapper-1">
+											<div class="svg-wrapper">
+												<i class="fa-solid fa-check-to-slot"></i>
+											</div>
+										</div>
+											<p>Dorm</p>
+										</button>
+									{% endif %}
+								</form>
+							{% endfor %}
+						{% else %}
+							<p class="check-button">No Record! Please Scan Your ID.</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="refresh-btn">
+				<button class="black-btn" type="button" onclick="reload()" style="margin: 0 auto;">
+					<i class="fa-solid fa-refresh"></i>
+				</button>
+			</div>
+		</div>
+		<!-- End -->
+
+		<section class="modal hidden">
+			<div class="flex">
+			  <button class="m-button btn-close">⨉</button>
+			</div>
+			<div>
+			  <h3>Edit Your Infomation</h3>
+			  <p>
+				Please fill in your information correctly.
+				<br>
+				You can edit your information whenever you want.
+			  </p>
+			</div>
+
+			<form action="/student/edit-info/{{student.studentID}}" method="post">
+				{% csrf_token %}
+				<table class="edit-items">
+					<tr>
+						<td>
+							<label for="name">Name</label>
+						</td>
+						<td>
+							<input type="text" name="name" id="name" placeholder="Ex. John Doe" value="{{student.name}}"/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="dorm">Dorm</label>
+						</td>
+						<td>
+							<input type="text" name="dorm" id="dorm" placeholder="Ex. 9-100" value="{{student.dorm_building}}-{{student.dorm_room}}" />
+						</td>
+					</tr>
+				</table>
+				<button type="submit" class="m-button btn">Save Changes</button>
+			</form>
+		  </section>
+		  
+		  <div class="overlay hidden"></div>
+
+	</body>
+	<script src="{% static 'js/student_app/profile.js' %}"></script>
+	<script src="{% static 'js/student_app/non-inspect.js' %}"></script>
+	<script src="{% static 'js/student_app/reload.js' %}"></script>
+	<script>
+		const bodyEl = document.querySelector("body");
+		const modal = document.querySelector(".modal");
+		const overlay = document.querySelector(".overlay");
+		const openModalBtn = document.querySelector(".editInfoBtn");
+		const closeModalBtn = document.querySelector(".btn-close");
+
+		const openModal = function () {
+  			modal.classList.remove("hidden");
+  			overlay.classList.remove("hidden");
+		};
+		const closeModal = function () {
+		  	modal.classList.add("hidden");
+		  	overlay.classList.add("hidden");
+		};
+
+		openModalBtn.addEventListener("click", openModal);
+		closeModalBtn.addEventListener("click", closeModal);
+		bodyEl.addEventListener("click", function (e) {
+		  	if (e.target === overlay) {
+				closeModal();
+		  	}
+		});
+
+	</script>
+</html>

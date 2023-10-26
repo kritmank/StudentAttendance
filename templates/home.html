@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home9.css' %}">
+{% endblock css%}
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock title %}
+{% block body %}
+    <div class="con">
+        <h1>Welcome</h1>
+        <h2>Choose the system</h2>
+
+        <a class="a-items" href="/class/table/">Class Attendance Check</a>
+        <a class="a-items" href="/dorm/table/">Dormitory Roll Call</a>
+    </div>
+{% endblock body %}

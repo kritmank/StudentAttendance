@@ -1,0 +1,21 @@
+﻿DAY,PERIOD,SUBJECT_NAME,TIME_START,TIME_END
+MON,1,Database,8:15,9:55
+MON,2,Math IT 2,10:05,11:45
+MON,3,Lab Work 5,12:40,14:20
+MON,4,Lab Work 5,14:30,16:10
+TUE,1,Physical Education 5,8:15,9:55
+TUE,2,Intro to Comp. Network,10:05,11:45
+TUE,3,Logic Design & Seq. Circuit,12:40,14:20
+TUE,4,Applied Mathematics 1,14:30,16:10
+WED,1,English 5,8:15,9:55
+WED,2,Mathematics 5,10:05,11:45
+WED,3,PBL 1,12:40,14:20
+WED,4,Programming 5,14:30,17:00
+THU,1,Comp. Architecture,8:15,9:55
+THU,2,Japanese 5,10:05,11:45
+THU,3,ART 3,12:40,14:20
+THU,4,Mathematics 5,14:30,15:20
+FRI,1,Thai Language 5,8:15,9:55
+FRI,2,Intro to IoTOT,10:05,11:45
+FRI,3,Physics 5,12:40,15:10
+FRI,4,Japanese 5,15:20,16:10
